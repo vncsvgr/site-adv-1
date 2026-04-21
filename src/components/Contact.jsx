@@ -59,7 +59,7 @@ export default function Contact() {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
+        <div className="grid lg:grid-cols-1 gap-6 items-start">
           {/* Form */}
           <div className="animate-left">
             {submitted ? (
@@ -193,7 +193,7 @@ export default function Contact() {
           {/* Info + Map */}
           <div className="animate-right space-y-8">
             {/* Contact info cards */}
-            <div className="grid sm:grid-cols-2 gap-4">
+            <div className="grid sm:grid-cols-2 gap-5">
               {contactInfo.map((info) => {
                 const Icon = info.icon
                 return (
