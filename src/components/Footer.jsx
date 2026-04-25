@@ -4,7 +4,6 @@ const quickLinks = [
   { label: 'Início', href: '#inicio' },
   { label: 'Sobre', href: '#sobre' },
   { label: 'Áreas de Atuação', href: '#areas' },
-  { label: 'Blog', href: '#blog' },
   { label: 'Contato', href: '#contato' },
 ]
 

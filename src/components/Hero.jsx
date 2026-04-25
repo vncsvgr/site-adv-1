@@ -73,7 +73,7 @@ export default function Hero() {
           </div>
 
           {/* Stats */}
-          <div className="mt-16 grid grid-cols-3 gap-8 border-t border-white/20 pt-10 max-w-md animate-fade-in">
+          <div className="mt-16 mb-24 md:mb-0 grid grid-cols-3 gap-8 border-t border-white/20 pt-10 max-w-md animate-fade-in">
             {[
               { value: '+15', label: 'Anos de Experiência' },
               { value: '+5k', label: 'Casos Resolvidos' },

@@ -59,7 +59,7 @@ export default function Testimonials() {
   }
 
   return (
-    <section className="section-padding bg-white">
+    <section className="section-padding bg-[#f3f4f6]">
       <div className="section-container">
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-16 animate-on-scroll">

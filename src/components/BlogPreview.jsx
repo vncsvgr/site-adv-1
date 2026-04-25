@@ -1,4 +1,4 @@
-import { FaArrowRight, FaCalendarAlt, FaUser } from 'react-icons/fa'
+#f3f4f6import { FaArrowRight, FaCalendarAlt, FaUser } from 'react-icons/fa'
 
 const articles = [
   {

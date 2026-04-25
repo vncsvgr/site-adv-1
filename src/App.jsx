@@ -5,7 +5,6 @@ import About from './components/About'
 import PracticeAreas from './components/PracticeAreas'
 import Differentials from './components/Differentials'
 import Testimonials from './components/Testimonials'
-import BlogPreview from './components/BlogPreview'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import FloatingWhatsApp from './components/FloatingWhatsApp'
@@ -38,7 +37,6 @@ function App() {
         <PracticeAreas />
         <Differentials />
         <Testimonials />
-        <BlogPreview />
         <Contact />
       </main>
       <Footer />
