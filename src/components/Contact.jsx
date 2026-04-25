@@ -31,7 +31,7 @@ const contactInfo = [
 export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', phone: '', message: '' })
   const [submitted, setSubmitted] = useState(false)
-  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState('')
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value })
@@ -39,11 +39,28 @@ export default function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    setLoading(true)
-    setTimeout(() => {
-      setLoading(false)
-      setSubmitted(true)
-    }, 1500)
+    
+    if (!form.name.trim() || !form.phone.trim() || !form.message.trim()) {
+      setError('Por favor, preencha todos os campos obrigatórios (*).')
+      return
+    }
+    setError('')
+    
+    const text = `Olá, gostaria de entrar em contato.
+    
+*Nome:* ${form.name}
+*E-mail:* ${form.email}
+*Telefone:* ${form.phone}
+
+*Mensagem:* 
+${form.message}`
+
+    const whatsappNumber = '5511998765432' // Substitua pelo número real da empresa
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`
+    
+    window.open(whatsappUrl, '_blank')
+    
+    setForm({ name: '', email: '', phone: '', message: '' })
   }
 
   return (
@@ -113,13 +130,12 @@ export default function Contact() {
                   </div>
                   <div>
                     <label htmlFor="email" className="block text-gray-700 font-sans text-sm font-medium mb-2">
-                      E-mail *
+                      E-mail
                     </label>
                     <input
                       id="email"
                       name="email"
                       type="email"
-                      required
                       value={form.email}
                       onChange={handleChange}
                       placeholder="seu@email.com"
@@ -133,12 +149,13 @@ export default function Contact() {
 
                 <div className="mb-5">
                   <label htmlFor="phone" className="block text-gray-700 font-sans text-sm font-medium mb-2">
-                    Telefone / WhatsApp
+                    Telefone / WhatsApp *
                   </label>
                   <input
                     id="phone"
                     name="phone"
                     type="tel"
+                    required
                     value={form.phone}
                     onChange={handleChange}
                     placeholder="(11) 99999-9999"
@@ -168,19 +185,18 @@ export default function Contact() {
                   />
                 </div>
 
+                {error && (
+                  <div className="mb-4 p-3 bg-red-50 text-red-600 text-sm font-sans rounded-sm border border-red-200">
+                    {error}
+                  </div>
+                )}
+
                 <button
                   id="contact-submit"
                   type="submit"
-                  disabled={loading}
-                  className="btn-primary w-full text-base flex items-center justify-center gap-3
-                             disabled:opacity-70 disabled:cursor-not-allowed"
+                  className="btn-primary w-full text-base flex items-center justify-center gap-3"
                 >
-                  {loading ? (
-                    <>
-                      <span className="w-5 h-5 border-2 border-primary/30 border-t-primary rounded-full animate-spin" />
-                      Enviando...
-                    </>
-                  ) : 'Enviar Mensagem'}
+                  Enviar Mensagem
                 </button>
 
                 <p className="text-gray-400 font-sans text-xs text-center mt-4">

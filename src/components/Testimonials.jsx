@@ -50,13 +50,6 @@ export default function Testimonials() {
   const prev = () => setCurrent((c) => (c === 0 ? testimonials.length - 1 : c - 1))
   const next = () => setCurrent((c) => (c === testimonials.length - 1 ? 0 : c + 1))
 
-  const visibleItems = () => {
-    const indices = []
-    for (let i = -1; i <= 1; i++) {
-      indices.push((current + i + testimonials.length) % testimonials.length)
-    }
-    return indices
-  }
 
   return (
     <section className="section-padding bg-[#f3f4f6]">
