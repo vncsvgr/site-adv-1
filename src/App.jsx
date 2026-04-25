@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import About from './components/About'
+import Team from './components/Team'
 import PracticeAreas from './components/PracticeAreas'
 import Differentials from './components/Differentials'
 import Testimonials from './components/Testimonials'
@@ -34,6 +35,7 @@ function App() {
       <main>
         <Hero />
         <About />
+        <Team />
         <PracticeAreas />
         <Differentials />
         <Testimonials />

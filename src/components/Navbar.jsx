@@ -4,6 +4,7 @@ import { FaBars, FaTimes, FaBalanceScale } from 'react-icons/fa'
 const navLinks = [
   { label: 'Início', href: '#inicio' },
   { label: 'Sobre', href: '#sobre' },
+  { label: 'Equipe', href: '#equipe' },
   { label: 'Áreas de Atuação', href: '#areas' },
   { label: 'Contato', href: '#contato' },
 ]
