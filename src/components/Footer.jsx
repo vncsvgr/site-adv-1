@@ -141,6 +141,16 @@ export default function Footer() {
           </p>
         </div>
       </div>
+
+      <div className="footer-credits">
+        <div className="container">
+          <span>Desenvolvido por</span>
+          <a href="https://exemplo-agencia.com.br" target="_blank" rel="noopener noreferrer">
+            <img src="/images/pinfalllogo (2).png" alt="Logotipo da Agência" className="credits-logo" />
+          </a>
+        </div>
+      </div>
+
     </footer>
   )
 }
